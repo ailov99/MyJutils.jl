@@ -19,11 +19,15 @@ function bitmap_maze_search(
     was_here_map::Matrix{Int8}
 )
     # Are we at the destination?
-    start_row == dest_row && start_col == dest_col && return true
+    if start_row == dest_row && start_col == dest_col
+        return true
+    end
 
     # If we are crossing into illegal area or were already here?
-    maze[start_row, start_col] != path_value || was_here_map[start_row, start_col] == 1 && return false
-
+    if maze[start_row, start_col] != path_value || was_here_map[start_row, start_col] == 1
+        return false
+    end
+    
     # Was here
     was_here_map[start_row, start_col] = 1;
 
