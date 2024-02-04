@@ -7,7 +7,7 @@ module AlgoModule
 
 __precompile__(true)
 
-using DateTime
+using Dates
 
 """
     Recursively search a maze for a path from [start_col][start_row] to [dest_col][dest_row]
