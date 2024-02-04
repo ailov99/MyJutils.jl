@@ -1,6 +1,13 @@
+"""
+    AlgoModule
+
+Umbrella module for various algorithms.
+"""
 module AlgoModule
 
 __precompile__(true)
+
+using DateTime
 
 """
     Recursively search a maze for a path from [start_col][start_row] to [dest_col][dest_row]
@@ -27,7 +34,7 @@ function bitmap_maze_search(
     if maze[start_row, start_col] != path_value || was_here_map[start_row, start_col] == 1
         return false
     end
-    
+
     # Was here
     was_here_map[start_row, start_col] = 1;
 
@@ -101,6 +108,32 @@ function bitmap_maze_search(
     end
 
     return false
+end
+
+"""
+    Kahan correction for floats
+"""
+function fadd_corrected(a::Float64, b::Float64)
+    # TODO
+end
+
+"""
+    Exponential moving average implementation with time-critical alpha adjustment
+"""
+mutable struct SMovingAvg
+    current_avg::Float64
+    alpha::Float64
+    time_of_last_addition::DateTime
+end
+
+function SMovingAvg()
+    """Ctor"""
+    return SMovingAvg(0.0, 0.5, 0)
+end
+
+function add_new_number(moving_avg::SMovingAvg)
+    """Add a new number, updating the moving average"""
+    # TODO
 end
 
 end
