@@ -1,6 +1,7 @@
-using MyJutils
 using Test
 
-@testset "MyJutils.jl" begin
-    # Write your tests here.
+@testset "AlgoModuleTests" begin
+    include("test_algomodule.jl")
 end
+
+true
