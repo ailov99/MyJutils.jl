@@ -5,7 +5,10 @@ __precompile__(true)
 include("ModulesIncludes.jl")
 
 using .AlgoModule: 
-    bitmap_maze_search
-export bitmap_maze_search
+    bitmap_maze_search,
+    halton_sequence,
+    fibonacci
+export bitmap_maze_search,
+    halton_sequence, fibonacci
 
 end
